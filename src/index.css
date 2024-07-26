@@ -7,5 +7,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center; */
-    background-color: #1d1f23;
+    background-color: hsl(220, 9%, 13%);
 }
+body{
+    -ms-overflow-style: none;
+    }
+   ::-webkit-scrollbar {
+     display: none;
+   }

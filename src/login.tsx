@@ -45,7 +45,7 @@ export default function Login() {
                 <div className="flex flex-col gap-3">
                     <input {...register("email")} onFocus={() => setEmailError([])} placeholder="이메일을 입력해주세요" className={emailError[0] ? errorInputBox : inputBox} />
                     <ErrorMsg errors={emailError} />
-                    <input {...register("password")} onFocus={() => setPasswordError([])} placeholder="비밀번호를 입력해주세요" className={passwordError[0] ? errorInputBox : inputBox} />
+                    <input {...register("password")} onFocus={() => setPasswordError([])} placeholder="비밀번호를 입력해주세요" type="password" className={passwordError[0] ? errorInputBox : inputBox} />
                     <ErrorMsg errors={passwordError} />
                 </div>
                 <div className="flex gap-5 justify-end *:p-2">

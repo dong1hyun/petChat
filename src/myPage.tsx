@@ -1,54 +1,62 @@
-import React from "react";
-import styled from "styled-components";
-import { Container, HashTag, NameChip, Title } from "./lib/general";
-import starImg from "./assets/starImg.png";
+import { StyledContainer } from "./home";
+import { Container, Footer, Title } from "./lib/general";
 import petImg from "./assets/pet.png"
+import me from "./assets/me.png"
 import { ReactComponent as RightArrow } from "./assets/blueRightArrow.svg"
-
-// Styled-components를 사용하여 styled div 정의
-const StyledContainer = styled.div`
-  background-image: url(${starImg});
-  background-repeat: repeat;
-  background-size: 250px;
-`;
-
-const Card = styled.div`
-background-color: rgba(29, 31, 35, 0.80); /* Adjust as needed for a dark background */
-box-shadow: 0 0 10px rgba(45, 135, 241, 0.30); /* Subtle shadow */
-`
+import { ReactComponent as Lock } from "./assets/lock.svg"
+import { ReactComponent as Exit } from "./assets/exit.svg"
+import { useNavigate } from "react-router-dom";
 
 export default function MyPage() {
+    const navigate = useNavigate();
     return (
-        <StyledContainer className={Container}>
-            <Title title="반려동물 성격카드" />
-            <div className="flex justify-start w-[390px] pl-7">
-                <div className="text-white text-[22px] font-normal leading-7">
-                    안녕하세요,<span className="mx-2" />
-                    <NameChip name="민휘" />
-                    님
-                </div>
+        <StyledContainer className={`${Container} gap-5`}>
+            <Title title="마이페이지" />
+            <div className="flex justify-start w-[390px] pl-7 pt-5">
+                <div className="text-white text-[22px] font-bold leading-7">내 반려동물</div>
             </div>
-            <Card className="rounded-lg w-[340px] h-[146px] relative">
+            <div className="bg-[#1d1f23cc] rounded-lg w-[340px] border border-[#212429;] pt-1 pb-6 px-4 text-white relative">
                 <div className="flex items-center m-5 mb-0 gap-5">
                     <img src={petImg} className="" />
                     <div className="flex flex-col">
-                        <div className="text-[#8c8c8c] text-xs font-normal leading-none">내 반려동물</div>
                         <div className="text-white text-lg font-medium leading-normal">김디오</div>
+                        <div className="text-[#8c8c8c] text-xs font-normal leading-none">활발한 사교가</div>
                     </div>
-                    <RightArrow className="absolute right-3 top-16" />
-                </div>
-                <div className="flex gap-2 pl-5 pt-3">
-                    <HashTag text="사람좋아" />
-                    <HashTag text="외향형" />
-                    <HashTag text="산책가자" />
-                </div>
-            </Card>
-            <div className="flex justify-start w-[390px] pl-7">
-                <div className="text-white text-[22px] font-normal leading-7">
-                    <NameChip name="디오" />
-                    와 나눈 대화
+                    <RightArrow className="absolute right-3 top-13" />
                 </div>
             </div>
+            <div className="w-[340px] h-[60px] pl-5 pr-3.5 py-3.5 bg-[#2d87f1] rounded-[14px] border-2 border-[#2d87f1] justify-between items-center gap-1 inline-flex">
+                <div className="flex">
+                    <div className="text-white text-base font-bold leading-tight">디오</div>
+                    <div className="text-white text-base font-medium leading-tight pl-1">와 대화한 시간</div>
+                </div>
+                <div className="h-[39px] px-4 py-2 bg-[#1d1f23] rounded-[10px] justify-center items-center gap-2.5 inline-flex">
+                    <div className="text-white text-lg font-bold font-['Pretendard Variable'] leading-normal">8시간</div>
+                </div>
+            </div>
+            <div className="flex justify-start w-[390px] pl-7">
+                <div className="text-white text-[22px] font-bold leading-7">내 정보 관리</div>
+            </div>
+            <div onClick={() => navigate("/nickName-change")} className="cursor-pointer bg-[#1d1f23cc] rounded-lg w-[340px] border border-[#212429;] pt-1 pb-6 px-4 text-white relative">
+                <div className="flex items-center m-5 mb-0 gap-5">
+                    <img src={me} className="" />
+                    <div className="flex flex-col">
+                        <div className="text-white text-lg font-medium leading-normal">닉네임</div>
+                        <div className="text-[#8c8c8c] text-xs font-normal leading-none">abcdef@gmail.com</div>
+                    </div>
+                    <RightArrow className="absolute right-3 top-13" />
+                </div>
+            </div>
+            <div className="w-[340px] h-[58px] pl-[18px] py-3.5 bg-[#212429] rounded-[14px] justify-start items-center gap-3 inline-flex">
+                <Lock />
+                <button onClick={() => navigate("/password-change")} className="text-[#c7c7c9] text-lg font-medium leading-normal">비밀번호 변경</button>
+            </div>
+            <div className="w-[340px] h-[60px] pl-[18px] py-3.5 bg-[#212429] rounded-[14px] justify-start items-center gap-3 inline-flex">
+                <Exit />
+                <button className="text-[#c7c7c9] text-lg font-medium leading-normal">로그아웃</button>
+            </div>
+            <button className="text-[#c7c7c9] text-[15px] font-normal leading-tight md:mb-28">회원탈퇴</button>
+            <Footer />
         </StyledContainer>
-    );
+    )
 }
