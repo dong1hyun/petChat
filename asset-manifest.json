@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/petChat/static/css/main.afaf8f1f.css",
-    "main.js": "/petChat/static/js/main.7d13e48e.js",
+    "main.css": "/petChat/static/css/main.c896b3db.css",
+    "main.js": "/petChat/static/js/main.d53f90d9.js",
     "static/media/starImg.png": "/petChat/static/media/starImg.91dfe9092e7b5a5e3274.png",
     "static/media/pet.png": "/petChat/static/media/pet.e3ca928efccba05cee41.png",
     "static/media/chat.svg": "/petChat/static/media/chat.2a22c236e4b725b34efec5308663cf0c.svg",
@@ -20,11 +20,11 @@
     "static/media/rightArrow.svg": "/petChat/static/media/rightArrow.9fa9e3aed611db54921ae70b9ad22e6c.svg",
     "static/media/back.svg": "/petChat/static/media/back.d7e2eeecc010792d00de3efd79b035df.svg",
     "static/media/blueRightArrow.svg": "/petChat/static/media/blueRightArrow.2990e920cd71552d884154dd46c3a069.svg",
-    "main.afaf8f1f.css.map": "/petChat/static/css/main.afaf8f1f.css.map",
-    "main.7d13e48e.js.map": "/petChat/static/js/main.7d13e48e.js.map"
+    "main.c896b3db.css.map": "/petChat/static/css/main.c896b3db.css.map",
+    "main.d53f90d9.js.map": "/petChat/static/js/main.d53f90d9.js.map"
   },
   "entrypoints": [
-    "static/css/main.afaf8f1f.css",
-    "static/js/main.7d13e48e.js"
+    "static/css/main.c896b3db.css",
+    "static/js/main.d53f90d9.js"
   ]
 }
