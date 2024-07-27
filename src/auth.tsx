@@ -19,7 +19,8 @@ export default function Auth() {
                 <button onClick={() => navigate("/login")} className="w-[340px] px-2.5 py-5 bg-[#2d87f1] rounded-[10px] flex gap-[70px]">
                     <div className="text-center text-[#232222] text-[17px] font-semibold">로그인하기</div>
                 </button>
-                <button onClick={() => navigate("/create-account")} className="py-3 text-[#c7c7c9] text-sm font-normal font-['Pretendard Variable'] leading-[18.20px]">회원가입하기</button>
+                <button onClick={() => navigate("/create-account")} className="py-3 text-[#c7c7c9] text-sm font-normal leading-[18.20px]">회원가입하기</button>
+                <button onClick={() => navigate("/home")} className="py-3 text-[#c7c7c9] text-sm font-normal leading-[18.20px]">게스트로 시작하기</button>
             </div>
         </div>
     )

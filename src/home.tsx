@@ -26,7 +26,7 @@ export default function Home() {
             <div className="flex justify-start w-[390px] pl-7">
                 <div className="text-white text-[22px] font-normal leading-7">
                     안녕하세요,<span className="mx-2" />
-                    <NameChip name="민휘" />
+                    <NameChip name="게스트" />
                     님
                 </div>
             </div>
@@ -35,7 +35,7 @@ export default function Home() {
                     <img src={petImg} className="" />
                     <div className="flex flex-col">
                         <div className="text-[#8c8c8c] text-xs font-normal leading-none">내 반려동물</div>
-                        <div className="text-white text-lg font-medium leading-normal">김디오</div>
+                        <div className="text-white text-lg font-medium leading-normal">골댕이</div>
                     </div>
                     <RightArrow className="absolute right-3 top-16 cursor-pointer" />
                 </div>
@@ -47,7 +47,7 @@ export default function Home() {
             </Card>
             <div className="flex justify-start w-[390px] pl-7">
                 <div className="text-white text-[22px] font-normal leading-7">
-                    <NameChip name="디오" />
+                    <NameChip name="골댕이" />
                     와 나눈 대화
                 </div>
             </div>
@@ -63,7 +63,7 @@ export default function Home() {
                     ))}
                     <div className="text-right text-[#d1e3f7] text-xs font-normal leading-none pt-3 pr-3">대화기록은 매월 1일마다 초기화돼요!</div>
                 </div>
-                <button onClick={() => navigate("/create-persona")} className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex md:mb-32">
+                <button onClick={() => navigate("/create-persona")} className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex mb-32">
                     <div className="text-[#1d1f23] text-sm font-semibold leading-[18.20px]">반려동물 추가</div>
                 </button>
             </div>
