@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/petChat/static/css/main.fd29bb2d.css",
-    "main.js": "/petChat/static/js/main.d53f90d9.js",
+    "main.js": "/petChat/static/js/main.ae16165f.js",
     "static/media/starImg.png": "/petChat/static/media/starImg.91dfe9092e7b5a5e3274.png",
     "static/media/pet.png": "/petChat/static/media/pet.e3ca928efccba05cee41.png",
     "static/media/chat.svg": "/petChat/static/media/chat.2a22c236e4b725b34efec5308663cf0c.svg",
@@ -21,10 +21,10 @@
     "static/media/back.svg": "/petChat/static/media/back.d7e2eeecc010792d00de3efd79b035df.svg",
     "static/media/blueRightArrow.svg": "/petChat/static/media/blueRightArrow.2990e920cd71552d884154dd46c3a069.svg",
     "main.fd29bb2d.css.map": "/petChat/static/css/main.fd29bb2d.css.map",
-    "main.d53f90d9.js.map": "/petChat/static/js/main.d53f90d9.js.map"
+    "main.ae16165f.js.map": "/petChat/static/js/main.ae16165f.js.map"
   },
   "entrypoints": [
     "static/css/main.fd29bb2d.css",
-    "static/js/main.d53f90d9.js"
+    "static/js/main.ae16165f.js"
   ]
 }
