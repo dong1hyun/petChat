@@ -15,7 +15,7 @@ export default function MyPage() {
             <div className="flex justify-start w-[390px] pl-7 pt-5">
                 <div className="text-white text-[22px] font-bold leading-7">내 반려동물</div>
             </div>
-            <div className="bg-[#1d1f23cc] rounded-lg w-[340px] border border-[#212429;] pt-1 pb-6 px-4 text-white relative">
+            <div onClick={() => navigate("/petName-change")} className="cursor-pointer bg-[#1d1f23cc] rounded-lg w-[340px] border border-[#212429;] pt-1 pb-6 px-4 text-white relative">
                 <div className="flex items-center m-5 mb-0 gap-5">
                     <img src={petImg} className="" />
                     <div className="flex flex-col">

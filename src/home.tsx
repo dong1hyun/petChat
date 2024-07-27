@@ -4,6 +4,7 @@ import { Card, Container, Footer, HashTag, NameChip, Title } from "./lib/general
 import starImg from "./assets/starImg.png";
 import petImg from "./assets/pet.png"
 import { ReactComponent as RightArrow } from "./assets/blueRightArrow.svg"
+import { useNavigate } from "react-router-dom";
 
 // Styled-components를 사용하여 styled div 정의
 export const StyledContainer = styled.div`
@@ -13,6 +14,7 @@ export const StyledContainer = styled.div`
 `;
 
 export default function Home() {
+    const navigate = useNavigate();
     const smapleChat = [
         {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"},
         {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"},
@@ -28,14 +30,14 @@ export default function Home() {
                     님
                 </div>
             </div>
-            <Card className="rounded-lg w-[340px] h-[146px] relative">
+            <Card onClick={() => navigate("/home/character")} className="rounded-lg w-[340px] h-[146px] relative cursor-pointer">
                 <div className="flex items-center m-5 mb-0 gap-5">
                     <img src={petImg} className="" />
                     <div className="flex flex-col">
                         <div className="text-[#8c8c8c] text-xs font-normal leading-none">내 반려동물</div>
                         <div className="text-white text-lg font-medium leading-normal">김디오</div>
                     </div>
-                    <RightArrow className="absolute right-3 top-16" />
+                    <RightArrow className="absolute right-3 top-16 cursor-pointer" />
                 </div>
                 <div className="flex gap-2 pl-5 pt-3">
                     <HashTag text="사람좋아" />
@@ -61,12 +63,9 @@ export default function Home() {
                     ))}
                     <div className="text-right text-[#d1e3f7] text-xs font-normal leading-none pt-3 pr-3">대화기록은 매월 1일마다 초기화돼요!</div>
                 </div>
-                <button className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex mb-16">
+                <button onClick={() => navigate("/create-persona")} className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex md:mb-32">
                     <div className="text-[#1d1f23] text-sm font-semibold leading-[18.20px]">반려동물 추가</div>
                 </button>
-            </div>
-            <div className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex">
-                <div className="text-[#1d1f23] text-sm font-semibold leading-[18.20px]">반려동물 추가</div>
             </div>
             <Footer />
         </StyledContainer>

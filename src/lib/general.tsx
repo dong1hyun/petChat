@@ -23,6 +23,10 @@ export function NameChip({ name }: { name: string }) {
     </div>
 }
 
+{/* <div className=" h-8 px-[18px] py-[7px] bg-[#212429] rounded-[50px] justify-start items-center gap-2.5 inline-flex">
+            <div className="text-[#d1e3f7] text-sm font-normal leading-[18.20px]">{gide}</div>
+        </div> */}
+
 export function HashTag({ text }: { text: string }) {
     return <div className="h-7 px-3 bg-[#1d1f23] rounded-[50px] border border-[#2d87f1] justify-center items-center gap-2.5 inline-flex">
         <div className="text-[#2d87f1] text-xs font-normal leading-none">#{text}</div>
@@ -40,13 +44,13 @@ export function Footer() {
     const navigate = useNavigate();
     return (
         <div className="flex justify-between items-center px-14 w-[390px] h-[78px] bg-[#181818] rounded-tl-[20px] rounded-tr-[20px] border-t border-[#3d3f46] fixed bottom-0">
-            <div onClick={() => {navigate("/home")}} className="flex flex-col items-center gap-1 cursor-pointer">
+            <div onClick={() => { navigate("/home") }} className="flex flex-col items-center gap-1 cursor-pointer">
                 {pathName === "/home" ? <BlueHome /> : <Home />}<div className="text-[#474b50] text-xs font-normal leading-none">홈</div>
             </div>
-            <div onClick={() => {navigate("/chat")}} className="flex flex-col items-center gap-1 cursor-pointer">
+            <div onClick={() => { navigate("/chat") }} className="flex flex-col items-center gap-1 cursor-pointer">
                 <Chat /><div className="text-[#474b50] text-xs font-normal leading-none">채팅</div>
             </div>
-            <div onClick={() => {navigate("/myPage")}} className="flex flex-col items-center gap-1 cursor-pointer">
+            <div onClick={() => { navigate("/myPage") }} className="flex flex-col items-center gap-1 cursor-pointer">
                 {pathName === "/myPage" ? <BlueMan /> : <Man />}<div className="text-[#474b50] text-xs font-normal leading-none">마이페이지</div>
             </div>
         </div>

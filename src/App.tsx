@@ -11,6 +11,7 @@ import Home from './home';
 import Character from './character';
 import MyPage from './myPage';
 import Chat from './chat';
+import Create_persona from './create_persona';
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/agreement' element={<Agreement />} />
         <Route path='/home' element={<Home />} />
+        <Route path='/create-persona' element={<Create_persona />} />
         <Route path='/chat' element={<Chat />} />
         <Route path='/myPage' element={<MyPage />} />
         <Route path='/home/character' element={<Character />} />
