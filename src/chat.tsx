@@ -54,7 +54,7 @@ export default function Chat() {
         }
     };
     return (
-        <div className={Container}>
+        <div className={`${Container} relative`}>
             <Title title="채팅" />
             <div className="w-[390px] flex flex-col items-start pl-6 pt-24 gap-7 text-white">
                 <div className="text-white text-xl font-medium leading-relaxed">디오와 어떤 대화를 나눠볼까요?</div>
@@ -82,7 +82,7 @@ export default function Chat() {
                 </div>
             </div>
             <div className="flex-grow"></div>
-            {loading ? <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-blue-500"></div> : null}
+            {loading ? <div className="absolute bottom-24 animate-spin rounded-full h-7 w-7 border-t-2 border-b-2 border-blue-500"></div> : null}
             <form onSubmit={handleSubmit(onValid)}>
                 <div className="relative w-[360px]">
                     <input {...register("text")} type="text" placeholder="메시지를 입력해주세요" className="w-[360px] h-[45px] pl-5 pr-1 py-2.5 text-white bg-[#212429] rounded-[50px] border border-[#2d87f1] justify-center items-center gap-2.5 inline-flex mb-5" />
