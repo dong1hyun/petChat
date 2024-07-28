@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
 import petImg from "./assets/goldeng2.png"
+import { ReactComponent as Logo } from "./assets/logo.svg"
 
 function GideChip({ gide }: { gide: string }) {
     return (
@@ -41,17 +42,17 @@ export default function Chat() {
                     axios.post('/tts', { text: response.data.result.message.content }, {
                         responseType: 'blob' // 응답을 Blob으로 처리합니다.
                     })
-                    .then(response => {
-                        const url = URL.createObjectURL(response.data);
-                        const audioElement = new Audio(url);
-                        audioElement.play().catch(error => {
-                            console.error("Error playing audio:", error);
-                        });
-                        setAudioUrl(url);
-                        // console.log(url);
-                        // console.log('Audio file fetched successfully');
-                        setLoading(false);
-                    })
+                        .then(response => {
+                            const url = URL.createObjectURL(response.data);
+                            const audioElement = new Audio(url);
+                            audioElement.play().catch(error => {
+                                console.error("Error playing audio:", error);
+                            });
+                            setAudioUrl(url);
+                            // console.log(url);
+                            // console.log('Audio file fetched successfully');
+                            setLoading(false);
+                        })
                 })
         } catch (error) {
             console.error('Error:', error);
@@ -64,8 +65,14 @@ export default function Chat() {
                 <div className="pl-[30px] pr-[30px] py-5 bg-black/10 rounded-tl-[14px] rounded-tr-sm rounded-bl-[14px] rounded-br-[14px] border border-[#2c2d2e] justify-start items-center gap-2.5 inline-flex">
                     <div className="text-right text-white text-base font-normal leading-tight break-words">{myCaht}</div>
                 </div>
-            </div> : <div className="w-[390px] flex flex-col items-start pl-6 pt-24 gap-7 text-white">
-                <div className="text-white text-xl font-medium leading-relaxed">디오와 어떤 대화를 나눠볼까요?</div>
+            </div> : <div className="w-[390px] flex flex-col items-start pl-6 gap-7 text-white">
+                <div className="text-white text-xl font-medium leading-relaxed">
+                    <div className="flex items-center">
+                        <Logo className="size-10" />
+                        <div className="text-white text-[32px] font-normal font-['SB AggroOTF'] leading-[41.60px]">PET-PAL</div>
+                    </div>
+                    골댕이와 어떤 대화를 나눠볼까요?
+                </div>
                 <div className="text-neutral-500 text-sm font-medium leading-relaxed">(게스트는 대화 저장이 안돼요 ㅜㅜ)</div>
                 <div className="flex flex-col gap-3">
                     💬일상
@@ -87,7 +94,7 @@ export default function Chat() {
                         <GideChip gide="항상 내 곁에 있어줘서 고마워!" />
                         <GideChip gide="사랑해" />
                     </div>
-                </div>  
+                </div>
             </div>}
             {
                 petChat ? <div className="flex flex-col gap-5 w-[390px] pl-5 pr-5 items-start">

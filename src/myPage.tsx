@@ -55,7 +55,7 @@ export default function MyPage() {
                 <Exit />
                 <button className="text-[#c7c7c9] text-lg font-medium leading-normal">로그아웃</button>
             </div>
-            <button className="text-[#c7c7c9] text-[15px] font-normal leading-tight md:mb-28">회원탈퇴</button>
+            <button className="text-[#c7c7c9] text-[15px] font-normal leading-tight mb-28">회원탈퇴</button>
             <Footer />
         </StyledContainer>
     )
