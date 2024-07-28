@@ -1,6 +1,6 @@
 import { StyledContainer } from "./home";
 import { Container, Footer, Title } from "./lib/general";
-import petImg from "./assets/pet.png"
+import petImg from "./assets/goldeng2.png"
 import me from "./assets/me.png"
 import { ReactComponent as RightArrow } from "./assets/blueRightArrow.svg"
 import { ReactComponent as Lock } from "./assets/lock.svg"
@@ -17,10 +17,10 @@ export default function MyPage() {
             </div>
             <div onClick={() => navigate("/petName-change")} className="cursor-pointer bg-[#1d1f23cc] rounded-lg w-[340px] border border-[#212429;] pt-1 pb-6 px-4 text-white relative">
                 <div className="flex items-center m-5 mb-0 gap-5">
-                    <img src={petImg} className="" />
+                    <img src={petImg} className="w-14 h-14 rounded-md" />
                     <div className="flex flex-col">
-                        <div className="text-white text-lg font-medium leading-normal">김디오</div>
-                        <div className="text-[#8c8c8c] text-xs font-normal leading-none">활발한 사교가</div>
+                        <div className="text-white text-lg font-medium leading-normal">골댕이</div>
+                        <div className="text-[#8c8c8c] text-xs font-normal leading-none">활발한 동반자</div>
                     </div>
                     <RightArrow className="absolute right-3 top-13" />
                 </div>
@@ -31,7 +31,7 @@ export default function MyPage() {
                     <div className="text-white text-base font-medium leading-tight pl-1">와 대화한 시간</div>
                 </div>
                 <div className="h-[39px] px-4 py-2 bg-[#1d1f23] rounded-[10px] justify-center items-center gap-2.5 inline-flex">
-                    <div className="text-white text-lg font-bold font-['Pretendard Variable'] leading-normal">8시간</div>
+                    <div className="text-white text-lg font-bold font-['Pretendard Variable'] leading-normal">n시간</div>
                 </div>
             </div>
             <div className="flex justify-start w-[390px] pl-7">
@@ -41,8 +41,8 @@ export default function MyPage() {
                 <div className="flex items-center m-5 mb-0 gap-5">
                     <img src={me} className="" />
                     <div className="flex flex-col">
-                        <div className="text-white text-lg font-medium leading-normal">닉네임</div>
-                        <div className="text-[#8c8c8c] text-xs font-normal leading-none">abcdef@gmail.com</div>
+                        <div className="text-white text-lg font-medium leading-normal">게스트</div>
+                        <div className="text-[#8c8c8c] text-xs font-normal leading-none">guest@gmail.com</div>
                     </div>
                     <RightArrow className="absolute right-3 top-13" />
                 </div>

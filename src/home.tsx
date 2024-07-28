@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Card, Container, Footer, HashTag, NameChip, Title } from "./lib/general";
 import starImg from "./assets/starImg.png";
-import petImg from "./assets/pet.png"
+import petImg from "./assets/goldeng2.png"
 import { ReactComponent as RightArrow } from "./assets/blueRightArrow.svg"
 import { useNavigate } from "react-router-dom";
 
@@ -32,7 +32,7 @@ export default function Home() {
             </div>
             <Card onClick={() => navigate("/home/character")} className="rounded-lg w-[340px] h-[146px] relative cursor-pointer">
                 <div className="flex items-center m-5 mb-0 gap-5">
-                    <img src={petImg} className="" />
+                    <img src={petImg} className="w-14 h-14 rounded-md" />
                     <div className="flex flex-col">
                         <div className="text-[#8c8c8c] text-xs font-normal leading-none">내 반려동물</div>
                         <div className="text-white text-lg font-medium leading-normal">골댕이</div>
