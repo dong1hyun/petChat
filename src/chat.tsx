@@ -3,6 +3,7 @@ import { ReactComponent as ChatArrow } from "./assets/chatArrow.svg";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
+import petImg from "./assets/goldeng2.png"
 
 function GideChip({ gide }: { gide: string }) {
     return (
@@ -13,12 +14,13 @@ function GideChip({ gide }: { gide: string }) {
 }
 
 export default function Chat() {
-    const { register, handleSubmit, getValues, watch } = useForm<{ text: string }>();
+    const { register, handleSubmit, getValues, watch, reset } = useForm<{ text: string }>();
     const [audioUrl, setAudioUrl] = useState<string | null>(null);
-    const [responseText, setResponseText] = useState('');
     const [loading, setLoading] = useState(false);
+    const [myCaht, setMychat] = useState("");
+    const [petChat, setPetChat] = useState("");
     const playAudio = () => {
-        console.log("playAudio", audioUrl);
+        // console.log("playAudio", audioUrl);
         if (audioUrl) {
             const audioElement = new Audio(audioUrl);
             audioElement.play().catch(error => {
@@ -29,11 +31,13 @@ export default function Chat() {
 
     const onValid = async ({ text }: { text: string }) => {
         try {
+            reset()
             setLoading(true);
+            setMychat(text);
             axios.post('/chat', { text })
                 .then(response => {
-                    console.log(response.data.result.message.content);
-                    setResponseText(response.data.result.message.content);
+                    // console.log(response.data.result.message.content);
+                    setPetChat(response.data.result.message.content);
                     axios.post('/tts', { text: response.data.result.message.content }, {
                         responseType: 'blob' // 응답을 Blob으로 처리합니다.
                     })
@@ -44,8 +48,8 @@ export default function Chat() {
                             console.error("Error playing audio:", error);
                         });
                         setAudioUrl(url);
-                        console.log(url);
-                        console.log('Audio file fetched successfully');
+                        // console.log(url);
+                        // console.log('Audio file fetched successfully');
                         setLoading(false);
                     })
                 })
@@ -56,7 +60,11 @@ export default function Chat() {
     return (
         <div className={`${Container} relative`}>
             <Title title="채팅" />
-            <div className="w-[390px] flex flex-col items-start pl-6 pt-24 gap-7 text-white">
+            {myCaht ? <div className="flex flex-col gap-5 w-[390px] pl-5 pr-5 items-end">
+                <div className="pl-[30px] pr-[30px] py-5 bg-black/10 rounded-tl-[14px] rounded-tr-sm rounded-bl-[14px] rounded-br-[14px] border border-[#2c2d2e] justify-start items-center gap-2.5 inline-flex">
+                    <div className="text-right text-white text-base font-normal leading-tight break-words">{myCaht}</div>
+                </div>
+            </div> : <div className="w-[390px] flex flex-col items-start pl-6 pt-24 gap-7 text-white">
                 <div className="text-white text-xl font-medium leading-relaxed">디오와 어떤 대화를 나눠볼까요?</div>
                 <div className="text-neutral-500 text-sm font-medium leading-relaxed">(게스트는 대화 저장이 안돼요 ㅜㅜ)</div>
                 <div className="flex flex-col gap-3">
@@ -79,15 +87,25 @@ export default function Chat() {
                         <GideChip gide="항상 내 곁에 있어줘서 고마워!" />
                         <GideChip gide="사랑해" />
                     </div>
-                </div>
-            </div>
+                </div>  
+            </div>}
+            {
+                petChat ? <div className="flex flex-col gap-5 w-[390px] pl-5 pr-5 items-start">
+                    <div>
+                        <img src={petImg} className="w-9 h-9 rounded-full" />
+                        <div className="pl-[30px] pr-[30px] py-5 bg-[#212429] rounded-tl-sm rounded-tr-[14px] rounded-bl-[14px] rounded-br-[14px] justify-start items-center gap-2.5 inline-flex">
+                            <div className="text-white text-base font-normal leading-tight break-words">{petChat}</div>
+                        </div>
+                    </div>
+                </div> : null
+            }
             <div className="flex-grow"></div>
             {loading ? <div className="absolute bottom-24 animate-spin rounded-full h-7 w-7 border-t-2 border-b-2 border-blue-500"></div> : null}
             <form onSubmit={handleSubmit(onValid)}>
-                <div className="relative w-[360px]">
+                <div className={`relative w-[360px] ${loading ? "opacity-50" : null}`}>
                     <input {...register("text")} type="text" placeholder="메시지를 입력해주세요" className="w-[360px] h-[45px] pl-5 pr-1 py-2.5 text-white bg-[#212429] rounded-[50px] border border-[#2d87f1] justify-center items-center gap-2.5 inline-flex mb-5" />
-                    <button type="submit" className="text-gray-300 absolute right-2 top-[6px]">
-                        <div className={`w-8 h-8 px-[11px] py-2.5 ${ watch("text") ? "bg-[#2d87f1]" : "bg-[#474b50]"} rounded-2xl justify-start items-center gap-2.5 inline-flex`}><ChatArrow /></div>
+                    <button disabled={loading} type="submit" className="text-gray-300 absolute right-2 top-[6px]">
+                        <div className={`w-8 h-8 px-[11px] py-2.5 ${watch("text") ? "bg-[#2d87f1]" : "bg-[#474b50]"} rounded-2xl justify-start items-center gap-2.5 inline-flex`}><ChatArrow /></div>
                     </button>
                 </div>
             </form>

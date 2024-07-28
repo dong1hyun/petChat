@@ -27,7 +27,7 @@ export default function MyPage() {
             </div>
             <div className="w-[340px] h-[60px] pl-5 pr-3.5 py-3.5 bg-[#2d87f1] rounded-[14px] border-2 border-[#2d87f1] justify-between items-center gap-1 inline-flex">
                 <div className="flex">
-                    <div className="text-white text-base font-bold leading-tight">디오</div>
+                    <div className="text-white text-base font-bold leading-tight">골댕이</div>
                     <div className="text-white text-base font-medium leading-tight pl-1">와 대화한 시간</div>
                 </div>
                 <div className="h-[39px] px-4 py-2 bg-[#1d1f23] rounded-[10px] justify-center items-center gap-2.5 inline-flex">
