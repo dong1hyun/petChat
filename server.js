@@ -14,11 +14,10 @@ const API_GATEWAY_KEY = 'fosUsBQ9k3YHUpyUnBd4wKsYXw6nL7xM2oAmNIxJ';
 
 app.post('/chat', async (req, res) => {
   const { text } = req.body;
-  console.log(text)
   const data = {
     topK: 0,
     includeAiFilters: true,
-    maxTokens: 30,
+    maxTokens: 256,
     temperature: 0.5,
     messages: [
       {
