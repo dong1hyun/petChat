@@ -63,7 +63,7 @@ export default function Home() {
                     ))}
                     <div className="text-right text-[#d1e3f7] text-xs font-normal leading-none pt-3 pr-3">대화기록은 매월 1일마다 초기화돼요!</div>
                 </div>
-                <button disabled onClick={() => navigate("/create-persona")} className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex mb-32">
+                <button onClick={() => navigate("/create-persona")} className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex mb-32">
                     <div className="text-[#1d1f23] text-sm font-semibold leading-[18.20px]">반려동물 추가</div>
                 </button>
             </div>

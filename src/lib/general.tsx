@@ -23,10 +23,6 @@ export function NameChip({ name }: { name: string }) {
     </div>
 }
 
-{/* <div className=" h-8 px-[18px] py-[7px] bg-[#212429] rounded-[50px] justify-start items-center gap-2.5 inline-flex">
-            <div className="text-[#d1e3f7] text-sm font-normal leading-[18.20px]">{gide}</div>
-        </div> */}
-
 export function HashTag({ text }: { text: string }) {
     return <div className="h-7 px-3 bg-[#1d1f23] rounded-[50px] border border-[#2d87f1] justify-center items-center gap-2.5 inline-flex">
         <div className="text-[#2d87f1] text-xs font-normal leading-none">#{text}</div>
