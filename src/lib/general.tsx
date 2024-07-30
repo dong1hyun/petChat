@@ -7,8 +7,8 @@ import { ReactComponent as Chat } from "../assets/chat.svg"
 import { ReactComponent as Man } from "../assets/man.svg"
 import { ReactComponent as BlueMan } from "../assets/blueMan.svg"
 
-export const InputBtn = "w-[340px] h-[62px] px-[72px] py-[22px] bg-[#2d87f1] rounded-[10px] m-5 text-lg font-semibold"
-export const InputBtn_disable = "w-[340px] h-[62px] px-[72px] py-[22px] bg-[#1a2f49] rounded-[10px] m-5 text-lg font-semibold"
+export const InputBtn = "w-[340px] h-[62px] px-[72px] bg-[#2d87f1] rounded-[10px] m-5 text-lg font-semibold"
+export const InputBtn_disable = "w-[340px] h-[62px] px-[72px] bg-[#1a2f49] rounded-[10px] m-5 text-lg font-semibold"
 
 export const Container = "flex flex-col gap-10 min-h-screen items-center font-pretendard"
 
@@ -52,3 +52,50 @@ export function Footer() {
         </div>
     )
 }
+
+export let petType: any = {};
+petType["외향적이다"] = {
+    "많이 움직인다": {
+        "많은 편이다": {
+            "반겨준다": 1,
+            "안 반겨준다": 2
+        },
+        "적은 편이다": {
+            "반겨준다": 3,
+            "안 반겨준다": 4
+        }
+    },
+    "적게 움직인다": {
+        "많은 편이다": {
+            "반겨준다": 5,
+            "안 반겨준다": 6
+        },
+        "적은 편이다": {
+            "반겨준다": 7,
+            "안 반겨준다": 8
+        }
+    }
+};
+
+petType["내향적이다"] = {
+    "많이 움직인다": {
+        "많은 편이다": {
+            "반겨준다": 9,
+            "안 반겨준다": 10
+        },
+        "적은 편이다": {
+            "반겨준다": 11,
+            "안 반겨준다": 12
+        }
+    },
+    "적게 움직인다": {
+        "많은 편이다": {
+            "반겨준다": 13,
+            "안 반겨준다": 14
+        },
+        "적은 편이다": {
+            "반겨준다": 15,
+            "안 반겨준다": 16
+        }
+    }
+};

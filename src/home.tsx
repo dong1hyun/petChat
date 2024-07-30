@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Card, Container, Footer, HashTag, NameChip, Title } from "./lib/general";
 import starImg from "./assets/starImg.png";
@@ -14,12 +14,22 @@ export const StyledContainer = styled.div`
 `;
 
 export default function Home() {
+    const [petName, setPetName] = useState("골댕이");
+    
     const navigate = useNavigate();
     const smapleChat = [
         {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"},
         {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"},
         {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"}
     ]
+
+    useEffect(() => {
+        if(localStorage.getItem("custom")){
+            const custom = JSON.parse(localStorage.getItem("custom")!);
+            const selected = JSON.parse(localStorage.getItem("selected")!);
+            setPetName(custom.petName);
+        }
+    })
     return (
         <StyledContainer className={Container}>
             <Title title="반려동물 성격카드" />
@@ -35,7 +45,7 @@ export default function Home() {
                     <img src={petImg} className="w-14 h-14 rounded-md" />
                     <div className="flex flex-col">
                         <div className="text-[#8c8c8c] text-xs font-normal leading-none">내 반려동물</div>
-                        <div className="text-white text-lg font-medium leading-normal">골댕이</div>
+                        <div className="text-white text-lg font-medium leading-normal">{petName}</div>
                     </div>
                     <RightArrow className="absolute right-3 top-16 cursor-pointer" />
                 </div>
