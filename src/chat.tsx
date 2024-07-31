@@ -1,9 +1,8 @@
 import { Container, NameChip, Title } from "./lib/general";
 import { ReactComponent as ChatArrow } from "./assets/chatArrow.svg";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import petImg from "./assets/goldeng2.png"
 import { ReactComponent as Logo } from "./assets/logo.svg"
 
 function GideChip({ gide }: { gide: string }) {
@@ -20,6 +19,21 @@ export default function Chat() {
     const [loading, setLoading] = useState(false);
     const [myCaht, setMychat] = useState("");
     const [petChat, setPetChat] = useState("");
+    const [petImg, setPetImg] = useState(require("./assets/dog.png"));
+    const setImg = (pet: string) => {
+        console.log(`./assets/${pet}.jpg`)
+        setPetImg(require(`./assets/${pet}.jpg`));
+    }
+    useEffect(() => {
+        if(localStorage.getItem("custom")){
+            const custom = JSON.parse(localStorage.getItem("custom")!);
+            const selected = JSON.parse(localStorage.getItem("selected")!);
+            if(custom.pet === "고양이") setImg("cat");
+            else if(custom.pet === "앵무새") setImg("parrot");
+            else if(custom.pet === "햄스터") setImg("hamster");
+            else if(custom.pet === "토끼") setImg("rabbit");
+        }
+    })
     const playAudio = () => {
         // console.log("playAudio", audioUrl);
         if (audioUrl) {

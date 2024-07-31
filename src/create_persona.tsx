@@ -81,8 +81,6 @@ export default function Create_persona() {
         if(selectedPet === "반려동물 종") alert("반려동물 종을 선택해주세요");
         else if(selectedGender === "성별") alert("성별을 선택해주세요");
         else {
-            // console.log(data);
-            // console.log(selectedPet, selectedGender);
             const result = {...data, pet: selectedPet, gender: selectedGender};
             
             localStorage.setItem("custom", JSON.stringify(result));
@@ -90,6 +88,10 @@ export default function Create_persona() {
         }
     }
     const onValid2 = () => {
+        if(!first || !second || !third || !fourth) {
+            alert("모든 성격을 선택해주세요");
+            return;
+        }
         const selected = {
             first,
             second,

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Card, Container, Title } from "./lib/general";
+import { Card, Container, InputBtn, Title } from "./lib/general";
 import { petType } from "./lib/general";
+import { useNavigate } from "react-router-dom";
 
 export default function Character() {
     const [imgSrc, setImgSrc] = useState(require("./assets/3.png"));
+    const navigate = useNavigate();
     useEffect(() => {
         if (localStorage.getItem("selected")) {
             const selected = JSON.parse(localStorage.getItem("selected")!);
@@ -14,7 +16,9 @@ export default function Character() {
     return (
         <div className={Container}>
             <Title title="반려동물 성격카드" />
-            <img src={imgSrc} alt="petType" className="mt-5 h-[450px]" />
+            <img src={imgSrc} alt="petType" className="mt-5" />
+            <div className="flex-grow" />
+            <button onClick={() => navigate("/home")} className={InputBtn}>홈화면</button>
         </div>
     )
 }

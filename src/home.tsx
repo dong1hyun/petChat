@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Card, Container, Footer, HashTag, NameChip, Title } from "./lib/general";
 import starImg from "./assets/starImg.png";
-import petImg from "./assets/goldeng2.png"
 import { ReactComponent as RightArrow } from "./assets/blueRightArrow.svg"
 import { useNavigate } from "react-router-dom";
 
@@ -15,18 +14,26 @@ export const StyledContainer = styled.div`
 
 export default function Home() {
     const [petName, setPetName] = useState("골댕이");
+    const [petImg, setPetImg] = useState(require("./assets/dog.png"));
     
     const navigate = useNavigate();
     const smapleChat = [
         {date: "1월 1일", content: "게스트 대화는 저장이 안돼요!"},
         {date: "1월 1일", content: "좋아하는 간식에 대해 이야기 나눠보세요!"},
     ]
-
+    const setImg = (pet: string) => {
+        console.log(`./assets/${pet}.jpg`)
+        setPetImg(require(`./assets/${pet}.jpg`));
+    }
     useEffect(() => {
         if(localStorage.getItem("custom")){
             const custom = JSON.parse(localStorage.getItem("custom")!);
             const selected = JSON.parse(localStorage.getItem("selected")!);
             setPetName(custom.petName);
+            if(custom.pet === "고양이") setImg("cat");
+            else if(custom.pet === "앵무새") setImg("parrot");
+            else if(custom.pet === "햄스터") setImg("hamster");
+            else if(custom.pet === "토끼") setImg("rabbit");
         }
     })
     return (

@@ -1,6 +1,5 @@
 import { StyledContainer } from "./home";
 import { Container, Footer, Title } from "./lib/general";
-import petImg from "./assets/goldeng2.png"
 import me from "./assets/me.png"
 import { ReactComponent as RightArrow } from "./assets/blueRightArrow.svg"
 import { ReactComponent as Lock } from "./assets/lock.svg"
@@ -10,12 +9,21 @@ import { useEffect, useState } from "react";
 
 export default function MyPage() {
     const [petName, setPetName] = useState("골댕이");
+    const [petImg, setPetImg] = useState(require("./assets/dog.png"));
     const navigate = useNavigate();
+    const setImg = (pet: string) => {
+        console.log(`./assets/${pet}.jpg`)
+        setPetImg(require(`./assets/${pet}.jpg`));
+    }
     useEffect(() => {
         if(localStorage.getItem("custom")){
             const custom = JSON.parse(localStorage.getItem("custom")!);
             const selected = JSON.parse(localStorage.getItem("selected")!);
             setPetName(custom.petName);
+            if(custom.pet === "고양이") setImg("cat");
+            else if(custom.pet === "앵무새") setImg("parrot");
+            else if(custom.pet === "햄스터") setImg("hamster");
+            else if(custom.pet === "토끼") setImg("rabbit");
         }
     })
     return (
