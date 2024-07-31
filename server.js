@@ -56,7 +56,6 @@ const ttsApiUrl = 'https://naveropenapi.apigw.ntruss.com/tts-premium/v1/tts';
 
 const fetchTTS = async (req, res) => {
   const { text } = req.body;  // 클라이언트 요청 본문에서 text 가져오기
-  console.log(text)
   try {
     const response = await axios.post(ttsApiUrl,
       new URLSearchParams({

@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { Container, InputBtn, Title } from "./lib/general";
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 const inputStyle = "mt-2 px-3 py-2 bg-transparent text-white rounded w-36 text-center border border-neutral-700";
 const textStyle = "text-white text-lg font-medium leading-7"
@@ -75,6 +76,7 @@ export default function Create_persona() {
     const petOptions = ["강아지", "고양이", "앵무새", "햄스터", "토끼"];
     const genderOptions = ["남자", "여자"];
     const { register, handleSubmit } = useForm<inputForm>();
+    const navigate = useNavigate();
     const onValid = (data: inputForm) => {
         if(selectedPet === "반려동물 종") alert("반려동물 종을 선택해주세요");
         else if(selectedGender === "성별") alert("성별을 선택해주세요");
@@ -95,6 +97,7 @@ export default function Create_persona() {
             fourth
         }
         localStorage.setItem("selected", JSON.stringify(selected));
+        navigate("/home/character");
     }
     const [first, setFirst] = useState("");
     const [second, setSecond] = useState("");

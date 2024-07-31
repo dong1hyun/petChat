@@ -6,9 +6,18 @@ import { ReactComponent as RightArrow } from "./assets/blueRightArrow.svg"
 import { ReactComponent as Lock } from "./assets/lock.svg"
 import { ReactComponent as Exit } from "./assets/exit.svg"
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function MyPage() {
+    const [petName, setPetName] = useState("골댕이");
     const navigate = useNavigate();
+    useEffect(() => {
+        if(localStorage.getItem("custom")){
+            const custom = JSON.parse(localStorage.getItem("custom")!);
+            const selected = JSON.parse(localStorage.getItem("selected")!);
+            setPetName(custom.petName);
+        }
+    })
     return (
         <StyledContainer className={`${Container} gap-5`}>
             <Title title="마이페이지" />
@@ -19,7 +28,7 @@ export default function MyPage() {
                 <div className="flex items-center m-5 mb-0 gap-5">
                     <img src={petImg} className="w-14 h-14 rounded-md" />
                     <div className="flex flex-col">
-                        <div className="text-white text-lg font-medium leading-normal">골댕이</div>
+                        <div className="text-white text-lg font-medium leading-normal">{petName}</div>
                         <div className="text-[#8c8c8c] text-xs font-normal leading-none">활발한 동반자</div>
                     </div>
                     <RightArrow className="absolute right-3 top-13" />
@@ -27,7 +36,7 @@ export default function MyPage() {
             </div>
             <div className="w-[340px] h-[60px] pl-5 pr-3.5 py-3.5 bg-[#2d87f1] rounded-[14px] border-2 border-[#2d87f1] justify-between items-center gap-1 inline-flex">
                 <div className="flex">
-                    <div className="text-white text-base font-bold leading-tight">골댕이</div>
+                    <div className="text-white text-base font-bold leading-tight">{petName}</div>
                     <div className="text-white text-base font-medium leading-tight pl-1">와 대화한 시간</div>
                 </div>
                 <div className="h-[39px] px-4 py-2 bg-[#1d1f23] rounded-[10px] justify-center items-center gap-2.5 inline-flex">

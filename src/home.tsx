@@ -18,9 +18,8 @@ export default function Home() {
     
     const navigate = useNavigate();
     const smapleChat = [
-        {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"},
-        {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"},
-        {date: "7월 10일", content: "좋아하는 간식에 대해 이야기 나눴어요!"}
+        {date: "1월 1일", content: "게스트 대화는 저장이 안돼요!"},
+        {date: "1월 1일", content: "좋아하는 간식에 대해 이야기 나눠보세요!"},
     ]
 
     useEffect(() => {
@@ -57,7 +56,7 @@ export default function Home() {
             </Card>
             <div className="flex justify-start w-[390px] pl-7">
                 <div className="text-white text-[22px] font-normal leading-7">
-                    <NameChip name="골댕이" />
+                    <NameChip name={petName} />
                     와 나눈 대화
                 </div>
             </div>
@@ -74,7 +73,7 @@ export default function Home() {
                     <div className="text-right text-[#d1e3f7] text-xs font-normal leading-none pt-3 pr-3">대화기록은 매월 1일마다 초기화돼요!</div>
                 </div>
                 <button onClick={() => navigate("/create-persona")} className="h-[38px] px-[26px] py-2.5 bg-[#c7c7c9] rounded-[50px] justify-start items-center gap-2.5 inline-flex mb-32">
-                    <div className="text-[#1d1f23] text-sm font-semibold leading-[18.20px]">반려동물 추가</div>
+                    <div className="text-[#1d1f23] text-sm font-semibold leading-[18.20px]">반려동물 생성</div>
                 </button>
             </div>
             <Footer />
