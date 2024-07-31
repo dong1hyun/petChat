@@ -14,7 +14,7 @@ export const StyledContainer = styled.div`
 
 export default function Home() {
     const [petName, setPetName] = useState("골댕이");
-    const [petImg, setPetImg] = useState(require("./assets/dog.png"));
+    const [petImg, setPetImg] = useState(require("./assets/dog.jpg"));
     
     const navigate = useNavigate();
     const smapleChat = [
@@ -22,7 +22,6 @@ export default function Home() {
         {date: "1월 1일", content: "좋아하는 간식에 대해 이야기 나눠보세요!"},
     ]
     const setImg = (pet: string) => {
-        console.log(`./assets/${pet}.jpg`)
         setPetImg(require(`./assets/${pet}.jpg`));
     }
     useEffect(() => {

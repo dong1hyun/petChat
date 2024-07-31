@@ -14,12 +14,12 @@ function GideChip({ gide }: { gide: string }) {
 }
 
 export default function Chat() {
-    const { register, handleSubmit, getValues, watch, reset } = useForm<{ text: string }>();
+    const { register, handleSubmit, watch, reset } = useForm<{ text: string }>();
     const [audioUrl, setAudioUrl] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const [myCaht, setMychat] = useState("");
     const [petChat, setPetChat] = useState("");
-    const [petImg, setPetImg] = useState(require("./assets/dog.png"));
+    const [petImg, setPetImg] = useState(require("./assets/dog.jpg"));
     const setImg = (pet: string) => {
         console.log(`./assets/${pet}.jpg`)
         setPetImg(require(`./assets/${pet}.jpg`));

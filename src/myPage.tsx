@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 export default function MyPage() {
     const [petName, setPetName] = useState("골댕이");
-    const [petImg, setPetImg] = useState(require("./assets/dog.png"));
+    const [petImg, setPetImg] = useState(require("./assets/dog.jpg"));
     const navigate = useNavigate();
     const setImg = (pet: string) => {
         console.log(`./assets/${pet}.jpg`)
