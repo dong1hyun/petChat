@@ -1,46 +1,17 @@
-# Getting Started with Create React App
+# 프로그램 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+petpal(펫팔)은 나의 반려동물의 특징, 성격 등을 입력해서 페르소나를 생성하고, 생성된 반려동물 페르소나와 직접 대화할 수 있도록 만든 채팅 프로그램입니다.
 
-## Available Scripts
+# 사용 기술
 
-In the project directory, you can run:
+react, javascript, tailwind, node, express, figma / (네이버 클라우드) clova ai, clova voice
 
-### `npm start`
+# 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. 반려동물의 정보를 입력해서 반려동물 페르소나를 생성함(16가지 성격 카드 중 하나를 획득)
+2. 성격 카드 마다 반려동물의 목소리와 반응이 달라짐
+3. 반려동물에게 채팅을 입력하면 자신의 성격과 입력한 정보에 맞게 음성으로 대답을 해줌
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# 구현 화면(메인 기능)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![홈화면](https://github.com/user-attachments/assets/825b2656-e0fe-4e86-9878-a19d8bdcad23) ![펫팔 이미지 2](https://github.com/user-attachments/assets/dca996e4-1146-4244-9c03-abb78d7125c2)
