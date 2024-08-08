@@ -4,7 +4,7 @@ petpal(펫팔)은 나의 반려동물의 특징, 성격 등을 입력해서 페�
 
 # 사용 기술
 
-react, javascript, tailwind, node, express, figma / (네이버 클라우드) clova ai, clova voice
+react, javascript, tailwind, node, express, figma / (네이버 클라우드) clova ai, clova tts
 
 # 기능
 
